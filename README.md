@@ -17,22 +17,22 @@
 ## 🔧 Tech Stack  
 
 ### 📊 Data Science & Statistics  
-![Python]
-![R]
-![NumPy]
-![Pandas]
-![Scikit-learn]  
-![Matplotlib]
+- 🐍 Python  
+- 📘 R  
+- 🔢 NumPy  
+- 🐼 Pandas  
+- 📈 Scikit-learn  
+- 🎨 Matplotlib  
 
 ### 🤖 Machine Learning & AI  
-![TensorFlow]
-![PyTorch]
+- 🟧 TensorFlow  
+- 🔥 PyTorch  
 
 ### 🌐 Development & Tools  
-![GitHub]
-![Jupyter]
-![RStudio]
-![VS Code]
+- 🛠️ Git & GitHub  
+- 📓 Jupyter Notebook  
+- 🧑‍💻 RStudio  
+- 🖥️ VS Code  
 
 ---
 
