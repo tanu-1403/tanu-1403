@@ -3,12 +3,7 @@
 🎓 MSc Statistics | 📊 Data Science & AI Enthusiast  
 
 💡 I’m passionate about applying **statistics + AI** to solve real-world problems.  
-🛠️ Skilled in **Python and R**.  
-📂 Currently working on projects like:  
-   - 💰 Salary Estimator & Future Salary Predictor  
-   - 🤖 AI-Powered Salary Negotiator  
-   - 📊 Skill Gap Analyzer  
-
+🛠️ Skilled in **Python and R**.    
 🌱 Preparing for **ISS** alongside my MSc journey.  
 ✨ Motto: *"Rebooting the world, one dataset at a time"*  
 
