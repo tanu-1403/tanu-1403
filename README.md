@@ -1,7 +1,6 @@
-<!-- 🌙 NIGHT SKY GITHUB VERSION -->
-
+<!-- 🌌 HEADER (Night Sky Banner) -->
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:060914,50:302b63,100:1a1333&height=230&section=header&text=Tanya%20Chaurasia&fontSize=42&fontColor=e8e0f0&animation=fadeIn"/>
+  <img src="https://i.ibb.co/3W5pWwG/pastel-night-header.gif" width="100%"/>
 </p>
 
 <p align="center">
@@ -10,29 +9,38 @@
 
 ---
 
-### 🌌 About
+<!-- 🌸 ABOUT -->
+<p align="center">
+  <img src="https://i.ibb.co/7zXhK3d/about-banner.png" width="50%"/>
+</p>
 
-> *"Growing gently, learning deeply — where soft intuition meets sharp logic, somewhere between data and dreams."*
+💜 MSc Statistics Student  
+📊 Data Science & AI Enthusiast  
+🌙 Soft intuition × Sharp logic  
+🌌 Turning data into insights  
 
 
+---
 
-### 🌌 GitHub Universe
+<!-- 🌌 GITHUB STATS -->
+<p align="center">
+  <img src="https://i.ibb.co/2gZfP6C/github-banner.png" width="50%"/>
+</p>
 
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=tanu-1403&show_icons=true&hide_border=true&bg_color=060914&title_color=c8a8f0&text_color=8a78a8&icon_color=9060d0"/>
 </p>
 
 <p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=tanu-1403&hide_border=true&background=060914&ring=9060d0&fire=c8a8f0&currStreakLabel=c8a8f0&sideNums=c8a8f0&sideLabels=8a78a8&dates=5a4870"/>
-</p>
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=tanu-1403&layout=compact&hide_border=true&bg_color=060914&title_color=c8a8f0&text_color=8a78a8"/>
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=tanu-1403&hide_border=true&background=060914&ring=9060d0&fire=c8a8f0&currStreakLabel=c8a8f0"/>
 </p>
 
 ---
 
-### 🌸 Connect
+<!-- 🌸 CONNECT -->
+<p align="center">
+  <img src="https://i.ibb.co/zGQ0k2H/connect-banner.png" width="50%"/>
+</p>
 
 <p align="center">
   <a href="https://www.linkedin.com/in/tanya-chaurasia-3580b2250">
@@ -45,12 +53,11 @@
 
 ---
 
-## 🌙
-
+<!-- 🌙 FOOTER -->
 <p align="center">
-  <i>soft heart, sharp mind — turning ideas into code, one commit at a time</i>
+  <img src="https://i.ibb.co/3W5pWwG/pastel-night-footer.gif" width="100%"/>
 </p>
 
 <p align="center">
-  <img src="https://media.giphy.com/media/26BRv0ThflsHCqDrG/giphy.gif" width="140"/>
+  <i>soft heart, sharp mind — turning ideas into code, one commit at a time</i>
 </p>
