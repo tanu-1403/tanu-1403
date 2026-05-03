@@ -1,9 +1,5 @@
-<p align="center">
-  <img src="https://media.giphy.com/media/3o7aD2saalBwwftBIY/giphy.gif" width="100%"/>
-</p>
-
-<h1 align="center">Tanya Chaurasia</h1>
+## 🌌 My Code Constellation
 
 <p align="center">
-  ✨ navigating data like stars — finding patterns in the dark ✨
+  <img src="https://ghchart.rshah.org/c8a8f0/tanu-1403" alt="Tanya's Github chart" />
 </p>
