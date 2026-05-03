@@ -15,52 +15,6 @@
 > *"Growing gently, learning deeply — where soft intuition meets sharp logic, somewhere between data and dreams."*
 
 
-Years : 3+
-Projects : 12+
-Curiosity : ∞
-
-
----
-
-## 💜 Skills
-
-
-Python ████████████████ 88%
-R / Stats ██████████████ 80%
-ML / AI ████████████ 75%
-SQL ███████████ 72%
-Data Viz █████████ 65%
-
-
----
-
-## 🌙 Journey
-
-
-Now → AI & Data Science (building + researching)
-2024 → Open Source Contributions (NLP + Stats)
-2023 → MSc Statistics (fell in love with data)
-2022 → First ML Model (digit classifier)
-2021 → First line of code (Python ✨)
-
-
----
-
-## 🌠 Projects
-
-✨ **Stellar Sentiment**  
-→ NLP emotion classifier using transformers  
-
-✨ **DataViz Dashboard**  
-→ Interactive statistical insights  
-
-✨ **Night Forecast**  
-→ Time-series prediction (LSTM)  
-
-✨ **StatQuery**  
-→ Natural language → data queries  
-
----
 
 ## 🌌 GitHub Universe
 
