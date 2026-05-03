@@ -10,13 +10,13 @@
 
 ---
 
-## 🌌 About
+### 🌌 About
 
 > *"Growing gently, learning deeply — where soft intuition meets sharp logic, somewhere between data and dreams."*
 
 
 
-## 🌌 GitHub Universe
+### 🌌 GitHub Universe
 
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=tanu-1403&show_icons=true&hide_border=true&bg_color=060914&title_color=c8a8f0&text_color=8a78a8&icon_color=9060d0"/>
@@ -32,7 +32,7 @@
 
 ---
 
-## 🌸 Connect
+### 🌸 Connect
 
 <p align="center">
   <a href="https://www.linkedin.com/in/tanya-chaurasia-3580b2250">
