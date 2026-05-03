@@ -1,61 +1,76 @@
-<!-- 🌸 Soft Pastel Header -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=FADADD,FFC1CC,E0BBE4&height=200&section=header&text=Tanya%20Chaurasia&fontSize=40&fontColor=ffffff&animation=fadeIn"/>
+<!-- 🌙 NIGHT SKY GITHUB README (PASTEL AESTHETIC) -->
 
-<h2 align="center">🌸✨ Tanya Chaurasia ✨🌸</h2>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+*{box-sizing:border-box;margin:0;padding:0;}
+.wrap{font-family:'DM Sans',sans-serif;max-width:680px;background:#060914;border-radius:20px;overflow:hidden;position:relative;color:#e8e0f0;}
+canvas#sky{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;}
+.content{position:relative;z-index:1;}
+.hero{padding:3rem 2.5rem 2rem;border-bottom:0.5px solid rgba(180,150,220,0.15);}
+.hero-name{font-family:'Cormorant Garamond',serif;font-size:3.4rem;font-weight:300;color:#f0eaff;}
+.hero-name em{font-style:italic;color:#c8a8f0;}
+.hero-tagline{font-size:0.8rem;color:#7a6890;margin-top:0.6rem;}
+.pill{font-size:0.65rem;color:#9a7ec0;border:0.5px solid rgba(154,126,192,0.35);padding:4px 12px;border-radius:99px;}
+.section{padding:1.5rem 2rem;}
+.card{background:rgba(255,255,255,0.025);border-radius:14px;padding:1rem;}
+</style>
 
-<p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?color=F7A8B8&center=true&vCenter=true&width=400&lines=Data.+Dreams.+Discipline.;Statistics+%2B+AI;Soft+mind%2C+strong+logic">
-</p>
+<div class="wrap">
+<canvas id="sky"></canvas>
+<div class="content">
 
----
+<div class="hero">
+  <div class="hero-name">Tanya <em>Chaurasia</em></div>
+  <div class="hero-tagline">✨ navigating data like stars — finding patterns in the dark</div>
+</div>
 
-## 🌷 a little space  
+<div class="section">
+  <div class="card">
+    💜 Data Science | Machine Learning | AI  
+    🌙 Soft intuition meets sharp logic  
+  </div>
+</div>
 
-<p align="center">
-  <img src="https://i.pinimg.com/originals/cc/2d/4b/cc2d4b6e5c9e9e7d5a9a3d1d7c5e7b4e.gif" width="250"/>
-</p>
+<div class="section">
+  <div class="card">
+    📊 GitHub Stats  
+    <img src="https://github-readme-stats.vercel.app/api?username=tanu-1403&show_icons=true&hide_border=true&bg_color=060914&title_color=c8a8f0&text_color=8a78a8"/>
+  </div>
+</div>
 
-> *growing gently, learning deeply, building quietly* 🌙  
+<div class="section">
+  <div class="card">
+    🌸 Connect  
+    🔗 <a href="https://www.linkedin.com/in/tanya-chaurasia-3580b2250">LinkedIn</a>  
+    💌 tanyachaurasia1403@gmail.com  
+  </div>
+</div>
 
----
+</div>
+</div>
 
-## 🌈 github  
+<script>
+const canvas = document.getElementById('sky');
+const ctx = canvas.getContext('2d');
+canvas.width = 680;
+canvas.height = 400;
 
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=tanu-1403&show_icons=true&theme=tokyonight&hide_border=true&bg_color=FDF6F9" height="160"/>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=tanu-1403&layout=compact&theme=tokyonight&hide_border=true&bg_color=FDF6F9" height="160"/>
-</p>
+const stars = Array.from({length:120},()=>({
+  x:Math.random()*canvas.width,
+  y:Math.random()*canvas.height,
+  r:Math.random()*1.2,
+  a:Math.random()
+}));
 
-<p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=tanu-1403&theme=tokyonight&hide_border=true"/>
-</p>
-
----
-
-## 💌 connect  
-
-<p align="center">
-  <a href="https://www.linkedin.com/in/tanya-chaurasia-3580b2250">
-    <img src="https://img.shields.io/badge/LinkedIn-F8BBD0?style=for-the-badge&logo=linkedin&logoColor=black"/>
-  </a>
-  <a href="mailto:tanyachaurasia1403@gmail.com">
-    <img src="https://img.shields.io/badge/Email-FADADD?style=for-the-badge&logo=gmail&logoColor=black"/>
-  </a>
-</p>
-
----
-
-## ☁️ soft notes  
-
-<p align="center">
-  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ2x5dGZ1d2V5dW1rY3Q5dXJ3eG5nMXE1YzJ1b2Z0dWQ0d2Z5Z3J3NyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/3oriO0OEd9QIDdllqo/giphy.gif" width="220"/>
-</p>
-
-✨ *soft heart, sharp mind*  
-💻 *turning ideas into code*  
-🌸 *learning, always*  
-
----
-
-<!-- 🌸 Footer -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=E0BBE4,FADADD,FFF0F5&height=120&section=footer"/>
+function draw(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  stars.forEach(s=>{
+    ctx.beginPath();
+    ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
+    ctx.fillStyle=`rgba(220,210,255,${s.a})`;
+    ctx.fill();
+  });
+  requestAnimationFrame(draw);
+}
+draw();
+</script>
