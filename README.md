@@ -1,81 +1,67 @@
 <div align="center">
 
-# Tanya *Chaurasia*
+<img src="https://capsule-render.vercel.app/api?type=waving&color=7b50c0,c8a8f0&height=120&section=header&animation=fadeIn" width="100%"/>
+
+# Tanya *Chaurasia* ✦
 
 *navigating data like stars — finding patterns in the dark*
 
-![Data Science](https://img.shields.io/badge/Data%20Science-7b50c0?style=flat-square&labelColor=060914)
-![Machine Learning](https://img.shields.io/badge/Machine%20Learning-7b50c0?style=flat-square&labelColor=060914)
-![AI Research](https://img.shields.io/badge/AI%20Research-7b50c0?style=flat-square&labelColor=060914)
-![Python](https://img.shields.io/badge/Python-7b50c0?style=flat-square&labelColor=060914)
-
-`3+ Years` · `12+ Projects` · `∞ Curiosity`
+<img src="https://readme-typing-svg.demolab.com?font=Georgia&style=italic&size=18&pause=1000&color=C8A8F0&center=true&width=500&lines=Data+Scientist+%E2%9C%A6+AI+Researcher;%22soft+heart%2C+sharp+mind%22;turning+ideas+into+code%2C+one+commit+at+a+time" alt="Typing SVG"/>
 
 </div>
 
 ---
 
-## About
+<div align="center">
+
+🌙 &nbsp;`3+ Years` &nbsp;·&nbsp; 🔭 &nbsp;`12+ Projects` &nbsp;·&nbsp; ✨ &nbsp;`∞ Curiosity`
+
+</div>
+
+---
+
+<div align="center">
+<img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="280" alt="coding gif"/>
+</div>
+
+<br>
 
 > *"Growing gently, learning deeply — where soft intuition meets sharp logic, somewhere between data and dreams."*
 
-| Skill     | Proficiency |
-|-----------|-------------|
-| Python    | ████████░░ 88% |
-| R / Stats | ████████░░ 80% |
-| ML / AI   | ███████░░░ 75% |
-| SQL       | ███████░░░ 72% |
-| Viz       | ██████░░░░ 65% |
+&nbsp;&nbsp;&nbsp;🐍 &nbsp;**Python** &nbsp;·&nbsp; 📊 &nbsp;**R / Stats** &nbsp;·&nbsp; 🤖 &nbsp;**ML / AI** &nbsp;·&nbsp; 🗄️ &nbsp;**SQL** &nbsp;·&nbsp; 📈 &nbsp;**Data Viz**
 
 ---
 
-## Journey
-
-```
-● Now   →  AI & Data Science        — Building, shipping, researching
-○ 2024  →  Open source contributions — NLP tools & statistical libraries
-○ 2023  →  Statistics degree         — Fell in love with data
-○ 2022  →  First ML model            — Handwritten digit classifier
-○ 2021  →  First line of code        — Python. Changed everything.
-```
-
----
-
-## Projects
-
-| Project | Description | Stack | Status |
-|---------|-------------|-------|--------|
-| ⭐ **Stellar Sentiment** | NLP pipeline to classify emotions in social media text using transformer fine-tuning. | `Python` `BERT` `NLP` | ✅ Live |
-| `</>` **DataViz Dashboard** | Interactive statistical dashboard for exploratory data analysis with auto-generated insights. | `Python` `Plotly` `Statistics` | ✅ Live |
-| ⭐ **Night Forecast** | Time-series weather prediction model using LSTM networks trained on 5 years of data. | `Python` `LSTM` `ML` | 🔨 WIP |
-| `</>` **StatQuery** | Natural language interface for querying datasets — ask questions, get visualisations. | `LLM` `SQL` `Python` | 🔨 WIP |
-
----
-
-## GitHub Stats
+## ✦ stats
 
 <div align="center">
 
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=tanu-1403&show_icons=true&hide_border=true&bg_color=060914&title_color=c8a8f0&text_color=8a78a8&icon_color=9060d0)
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=tanu-1403&layout=compact&hide_border=true&bg_color=060914&title_color=c8a8f0&text_color=8a78a8)
+<img src="https://github-readme-stats.vercel.app/api?username=tanu-1403&show_icons=true&hide_border=true&bg_color=060914&title_color=c8a8f0&text_color=8a78a8&icon_color=9060d0" height="160"/>
+&nbsp;
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=tanu-1403&layout=compact&hide_border=true&bg_color=060914&title_color=c8a8f0&text_color=8a78a8" height="160"/>
 
-![Streak](https://github-readme-streak-stats.herokuapp.com/?user=tanu-1403&hide_border=true&background=060914&ring=c8a8f0&fire=9060d0&currStreakLabel=c8a8f0&sideLabels=8a78a8&dates=5a4870)
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=tanu-1403&hide_border=true&background=060914&ring=9060d0&fire=c8a8f0&currStreakLabel=c8a8f0&sideNums=c8a8f0&sideLabels=8a78a8&dates=5a4870" height="160"/>
 
 </div>
 
 ---
 
-## Connect
+## ✦ connect
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-tanya--chaurasia-c8a8f0?style=flat-square&logo=linkedin&logoColor=a890d0&labelColor=060914)](https://linkedin.com/in/tanya-chaurasia)
-[![Email](https://img.shields.io/badge/Email-tanyachaurasia1403%40gmail.com-c8a8f0?style=flat-square&logo=gmail&logoColor=a890d0&labelColor=060914)](mailto:tanyachaurasia1403@gmail.com)
+<div align="center">
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-tanya--chaurasia-c8a8f0?style=for-the-badge&logo=linkedin&logoColor=c8a8f0&labelColor=060914)](https://www.linkedin.com/in/tanya-chaurasia-3580b2250)
+&nbsp;
+[![Email](https://img.shields.io/badge/Email-say%20hello-c8a8f0?style=for-the-badge&logo=gmail&logoColor=c8a8f0&labelColor=060914)](mailto:tanyachaurasia1403@gmail.com)
+
+</div>
 
 ---
 
 <div align="center">
 
-*"soft heart, sharp mind — turning ideas into code, one commit at a time"*
+<img src="https://capsule-render.vercel.app/api?type=waving&color=7b50c0,c8a8f0&height=80&section=footer" width="100%"/>
 
-**T.C.** · [tanu-1403](https://github.com/tanu-1403)
+*"soft heart, sharp mind"* &nbsp;✦&nbsp; **T.C.**
 
 </div>
