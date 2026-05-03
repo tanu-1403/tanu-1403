@@ -1,44 +1,60 @@
-# 👋 Hi, I'm Tanya Chaurasia  
+<!-- 🌸 Pastel Wave Header -->
+<img src="https://capsule-render.vercel.app/api?type=waving&color=FADADD,FFC1CC,E0BBE4&height=200&section=header&text=Tanya%20Chaurasia&fontSize=40&fontColor=ffffff&animation=fadeIn&fontAlignY=35"/>
 
-🎓 MSc Statistics | 📊 Data Science & AI Enthusiast  
+# 🌸✨ Hi, I’m Tanya Chaurasia  
 
-💡 I’m passionate about applying **statistics + AI** to solve real-world problems.  
-🛠️ Skilled in **Python and R**.    
-🌱 Preparing for **ISS** alongside my MSc journey.  
-✨ Motto: *"Rebooting the world, one dataset at a time"*  
+```python
+# soft thoughts, sharp logic
+def build_life():
+    while curious:
+        learn()
+        create()
+        evolve()
 
----
+🎓 MSc Statistics
+📊 Data Science & AI Enthusiast
+🤍 blending logic + creativity + data
 
-## 🔧 Tech Stack  
+🌷 about me
 
-### 📊 Data Science & Statistics  
-- 🐍 Python  
-- 📘 R  
-- 🔢 NumPy  
-- 🐼 Pandas  
-- 📈 Scikit-learn  
-- 🎨 Matplotlib  
+In a world full of noise,
+I like finding patterns that quietly make sense.
 
-### 🤖 Machine Learning & AI  
-- 🟧 TensorFlow  
-- 🔥 PyTorch  
+From 📈 distributions to 🤖 models,
+I’m learning how to turn data into something meaningful.
 
-### 🌐 Development & Tools  
-- 🛠️ Git & GitHub  
-- 📓 Jupyter Notebook  
-- 🧑‍💻 RStudio  
-- 🖥️ VS Code  
+🌱 currently growing through:
 
----
+MSc journey 📚
+ISS preparation 🎯
+real-world data projects 💻
 
-## 📊 GitHub Stats  
+✨ soft mind, strong algorithms
 
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=tanu-1403&show_icons=true&theme=radical)  
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=tanu-1403&layout=compact&theme=radical)  
+🎀 tech stack
 
----
+💻 languages
+🐍 Python • 📘 R
 
-## 🌐 Connect With Me  
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/tanya-chaurasia-3580b2250/overlay/about-this-profile/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BMWCE7xt3S5m6qKWseEMB4w%3D%3D) 
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:tanyachaurasia1403@gmail.com)  
+📊 data & stats
+🐼 Pandas • 🔢 NumPy • 📈 Scikit-learn
 
+🤖 AI/ML
+🟧 TensorFlow • 🔥 PyTorch
+
+🌸 tools
+📓 Jupyter • 🧑‍💻 RStudio • 🖥️ VS Code • 🛠️ Git
+
+🌈 github space
+
+💌 connect
+
+💼 LinkedIn
+https://www.linkedin.com/in/tanya-chaurasia-3580b2250
+
+📧 Email
+tanyachaurasia1403@gmail.com
+
+🌙 little note
+
+growing gently, learning deeply, building quietly
