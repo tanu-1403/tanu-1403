@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Tanya Chaurasia — Data Science & AI</title>
+<meta name="description" content="Tanya Chaurasia — Data Scientist, AI Researcher. Navigating data like stars, finding patterns in the dark."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --night:#060914;
+  --purple-deep:#7b50c0;
+  --purple-light:#c8a8f0;
+  --purple-dim:#9a7ec0;
+  --text-primary:#f0eaff;
+  --text-secondary:#c0aedd;
+  --text-muted:#8a78a8;
+  --text-ghost:#5a4870;
+  --border:rgba(180,150,220,0.15);
+}
+html{scroll-behavior:smooth}
+body{background:var(--night);color:var(--text-primary);font-family:'DM Sans',sans-serif;min-height:100vh;overflow-x:hidden}
+canvas#sky{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+.page{position:relative;z-index:1;max-width:720px;margin:0 auto;padding:0 1.5rem}
+
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:4rem 0 3rem}
+.eyebrow{font-size:.62rem;letter-spacing:4px;text-transform:uppercase;color:var(--purple-dim);margin-bottom:1.2rem;opacity:0;animation:fadeUp .8s .2s forwards}
+.name{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,10vw,5.5rem);font-weight:300;line-height:1;letter-spacing:-2px;color:var(--text-primary);opacity:0;animation:fadeUp .9s .4s forwards}
+.name em{font-style:italic;color:var(--purple-light)}
+.typed-wrap{height:1.4rem;margin-top:.9rem;overflow:hidden;opacity:0;animation:fadeUp .8s .6s forwards}
+#typed{font-size:.75rem;letter-spacing:2.5px;color:var(--text-ghost)}
+.cursor{display:inline-block;width:1.5px;height:.85em;background:var(--purple-dim);margin-left:2px;vertical-align:middle;animation:blink .7s steps(1) infinite}
+.pills{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:1.6rem;opacity:0;animation:fadeUp .8s .8s forwards}
+.pill{font-size:.58rem;letter-spacing:2px;text-transform:uppercase;color:var(--purple-dim);border:.5px solid rgba(154,126,192,.3);padding:5px 14px;border-radius:99px;background:rgba(154,126,192,.06);transition:all .3s;cursor:default}
+.pill:hover{background:rgba(154,126,192,.18);color:var(--purple-light);border-color:rgba(200,168,240,.5);transform:translateY(-1px)}
+.scroll-hint{margin-top:3.5rem;display:flex;flex-direction:column;align-items:center;gap:8px;opacity:0;animation:fadeUp .8s 1.4s forwards}
+.scroll-hint span{font-size:.55rem;letter-spacing:3px;text-transform:uppercase;color:var(--text-ghost)}
+.scroll-line{width:.5px;height:40px;background:linear-gradient(to bottom,var(--purple-dim),transparent);animation:scrollPulse 2s ease-in-out infinite}
+
+section{padding:5rem 0;border-top:.5px solid var(--border)}
+.sec-label{font-size:.58rem;letter-spacing:4px;text-transform:uppercase;color:var(--text-ghost);margin-bottom:2.5rem;display:flex;align-items:center;gap:12px}
+.sec-label::after{content:'';flex:1;height:.5px;background:var(--border)}
+
+.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:3rem}
+.stat-card{background:rgba(255,255,255,.025);border:.5px solid var(--border);border-radius:14px;padding:1.2rem;text-align:center;transition:border-color .3s,background .3s}
+.stat-card:hover{background:rgba(154,126,192,.06);border-color:rgba(180,150,220,.3)}
+.stat-n{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:300;color:var(--purple-light);line-height:1}
+.stat-l{font-size:.55rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--text-ghost);margin-top:4px}
+
+.quote-wrap{min-height:80px;display:flex;align-items:center;justify-content:center;padding:1.2rem 1.8rem;background:rgba(255,255,255,.02);border:.5px solid var(--border);border-radius:14px;margin-bottom:3rem;position:relative;overflow:hidden}
+.quote-wrap::before{content:'\201C';position:absolute;top:-10px;left:16px;font-family:'Cormorant Garamond',serif;font-size:5rem;color:rgba(154,126,192,.1);line-height:1;pointer-events:none}
+#quote-text{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.12rem;color:var(--text-secondary);line-height:1.65;text-align:center;transition:opacity .5s,transform .5s}
+
+.skills{display:flex;flex-direction:column;gap:10px}
+.sk-row{display:flex;align-items:center;gap:12px}
+.sk-name{font-size:.72rem;color:var(--text-muted);width:70px;flex-shrink:0}
+.sk-track{flex:1;height:1.5px;background:rgba(180,150,220,.1);border-radius:99px;overflow:hidden}
+.sk-bar{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--purple-deep),var(--purple-light));width:0;transition:width 1.4s cubic-bezier(.22,1,.36,1)}
+.sk-pct{font-size:.62rem;color:var(--text-ghost);width:28px;text-align:right}
+
+.timeline{display:flex;flex-direction:column;position:relative;padding-left:28px}
+.timeline::before{content:'';position:absolute;left:6px;top:8px;bottom:8px;width:.5px;background:var(--border)}
+.tl-item{position:relative;padding:10px 0}
+.tl-dot{position:absolute;left:-25px;top:14px;width:10px;height:10px;border-radius:50%;border:1px solid rgba(180,150,220,.4);background:var(--night);z-index:1}
+.tl-dot.now{background:var(--purple-deep);border-color:var(--purple-light);box-shadow:0 0 8px rgba(120,80,190,.4)}
+.tl-date{font-size:.58rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-ghost)}
+.tl-title{font-size:.9rem;color:#d0c0e8;margin-top:2px}
+.tl-sub{font-size:.72rem;color:var(--text-ghost);margin-top:2px}
+
+.projects{display:flex;flex-direction:column;gap:10px}
+.proj-card{display:flex;align-items:flex-start;gap:14px;padding:1rem 1.2rem;background:rgba(255,255,255,.02);border:.5px solid rgba(180,150,220,.13);border-radius:12px;transition:background .25s,border-color .25s,transform .25s;cursor:default}
+.proj-card:hover{background:rgba(154,126,192,.07);border-color:rgba(180,150,220,.3);transform:translateX(4px)}
+.proj-icon{width:36px;height:36px;border-radius:9px;background:rgba(120,80,190,.12);border:.5px solid rgba(180,150,220,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.proj-icon svg{width:15px;height:15px;fill:#a080d0}
+.proj-body{flex:1}
+.proj-header{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.proj-name{font-size:.88rem;color:#d0c0e8;font-weight:500}
+.status{font-size:.55rem;letter-spacing:1.2px;text-transform:uppercase;padding:2px 8px;border-radius:99px}
+.status-live{color:#90d0a0;background:rgba(80,180,100,.1);border:.5px solid rgba(80,180,100,.2)}
+.status-wip{color:var(--purple-light);background:rgba(150,100,220,.1);border:.5px solid rgba(150,100,220,.2)}
+.proj-desc{font-size:.74rem;color:var(--text-ghost);margin-top:4px;line-height:1.5}
+.proj-tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:7px}
+.proj-tag{font-size:.55rem;letter-spacing:1.2px;text-transform:uppercase;color:#8060b0;background:rgba(120,80,190,.1);padding:2px 7px;border-radius:99px;border:.5px solid rgba(180,150,220,.15)}
+
+.gh-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.gh-stats img{width:100%;border-radius:12px;display:block}
+.gh-streak{margin-top:10px}
+.gh-streak img{width:100%;border-radius:12px;display:block}
+
+.connect-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.conn-card{display:flex;align-items:center;gap:12px;padding:.9rem 1.1rem;background:rgba(255,255,255,.02);border:.5px solid rgba(180,150,220,.14);border-radius:12px;text-decoration:none;transition:background .25s,border-color .25s,transform .2s}
+.conn-card:hover{background:rgba(154,126,192,.08);border-color:rgba(180,150,220,.35);transform:translateY(-2px)}
+.conn-ico{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ico-li{background:rgba(140,100,200,.15)}
+.ico-gh{background:rgba(100,80,160,.15)}
+.ico-em{background:rgba(110,80,180,.15)}
+.conn-ico svg{width:14px;height:14px;fill:#a890d0}
+.conn-name{font-size:.82rem;color:var(--text-secondary);font-weight:400}
+.conn-sub{font-size:.68rem;color:var(--text-ghost)}
+
+footer{padding:3rem 0 2rem;border-top:.5px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.footer-quote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.95rem;color:var(--text-ghost)}
+.footer-sig{font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--purple-dim);text-align:right;line-height:1.4}
+.footer-sig small{font-family:'DM Sans',sans-serif;font-size:.58rem;letter-spacing:2px;color:var(--text-ghost);display:block}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+@keyframes scrollPulse{0%,100%{opacity:.4}50%{opacity:1}}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+@media(max-width:520px){
+  .gh-stats{grid-template-columns:1fr}
+  .connect-grid{grid-template-columns:1fr}
+  footer{flex-direction:column;text-align:center}
+  .footer-sig{text-align:center}
+}
+</style>
+</head>
+<body>
+
+<canvas id="sky"></canvas>
+
+<div class="page">
+
+  <div class="hero">
+    <div class="eyebrow">Statistics · AI · Research</div>
+    <h1 class="name">Tanya <em>Chaurasia</em></h1>
+    <div class="typed-wrap"><span id="typed"></span><span class="cursor"></span></div>
+    <div class="pills">
+      <span class="pill">Data Science</span>
+      <span class="pill">Machine Learning</span>
+      <span class="pill">AI Research</span>
+      <span class="pill">Python</span>
+      <span class="pill">Statistics</span>
+    </div>
+    <div class="scroll-hint">
+      <span>scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </div>
+
+  <section>
+    <div class="sec-label">About</div>
+    <div class="stats-grid reveal">
+      <div class="stat-card"><div class="stat-n">3+</div><div class="stat-l">Years</div></div>
+      <div class="stat-card"><div class="stat-n">12+</div><div class="stat-l">Projects</div></div>
+      <div class="stat-card"><div class="stat-n">&#8734;</div><div class="stat-l">Curiosity</div></div>
+    </div>
+    <div class="quote-wrap reveal">
+      <p id="quote-text">&ldquo;Growing gently, learning deeply — where soft intuition meets sharp logic, somewhere between data and dreams.&rdquo;</p>
+    </div>
+    <div class="skills reveal" id="skills"></div>
+  </section>
+
+  <section>
+    <div class="sec-label">Journey</div>
+    <div class="timeline reveal" id="timeline"></div>
+  </section>
+
+  <section>
+    <div class="sec-label">Projects</div>
+    <div class="projects reveal" id="projects"></div>
+  </section>
+
+  <section>
+    <div class="sec-label">GitHub</div>
+    <div class="gh-stats reveal">
+      <img src="https://github-readme-stats.vercel.app/api?username=tanu-1403&show_icons=true&hide_border=true&bg_color=060914&title_color=c8a8f0&text_color=8a78a8&icon_color=9060d0" alt="GitHub Stats"/>
+      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=tanu-1403&layout=compact&hide_border=true&bg_color=060914&title_color=c8a8f0&text_color=8a78a8" alt="Top Languages"/>
+    </div>
+    <div class="gh-streak reveal">
+      <img src="https://github-readme-streak-stats.herokuapp.com/?user=tanu-1403&hide_border=true&background=060914&ring=9060d0&fire=c8a8f0&currStreakLabel=c8a8f0&sideNums=c8a8f0&sideLabels=8a78a8&dates=5a4870" alt="GitHub Streak"/>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-label">Connect</div>
+    <div class="connect-grid reveal">
+      <a href="https://www.linkedin.com/in/tanya-chaurasia-3580b2250" class="conn-card" target="_blank" rel="noopener">
+        <div class="conn-ico ico-li">
+          <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 .774v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </div>
+        <div><div class="conn-name">LinkedIn</div><div class="conn-sub">tanya-chaurasia</div></div>
+      </a>
+      <a href="https://github.com/tanu-1403" class="conn-card" target="_blank" rel="noopener">
+        <div class="conn-ico ico-gh">
+          <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        </div>
+        <div><div class="conn-name">GitHub</div><div class="conn-sub">tanu-1403</div></div>
+      </a>
+      <a href="mailto:tanyachaurasia1403@gmail.com" class="conn-card" style="grid-column:1/-1" target="_blank" rel="noopener">
+        <div class="conn-ico ico-em">
+          <svg viewBox="0 0 24 24"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 010 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>
+        </div>
+        <div><div class="conn-name">Email</div><div class="conn-sub">tanyachaurasia1403@gmail.com</div></div>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-quote">&ldquo;soft heart, sharp mind — turning ideas into code, one commit at a time&rdquo;</div>
+    <div class="footer-sig">T.C.<small>tanu-1403</small></div>
+  </footer>
+
+</div>
+
+<script>
+const canvas = document.getElementById('sky');
+const ctx = canvas.getContext('2d');
+let W, H;
+function resize(){W=canvas.width=window.innerWidth;H=canvas.height=window.innerHeight;}
+resize();
+window.addEventListener('resize',resize);
+
+const stars=Array.from({length:280},()=>({x:Math.random(),y:Math.random(),r:Math.random()*1.2+.2,a:Math.random()*.7+.15,ts:Math.random()*.022+.005,to:Math.random()*Math.PI*2}));
+const shooters=[];let lastShoot=0;
+function spawnShooter(t){if(t-lastShoot<3000+Math.random()*4000)return;lastShoot=t;shooters.push({x:Math.random()*W*.6+W*.05,y:Math.random()*H*.35,vx:3.5+Math.random()*2.5,vy:1.5+Math.random()*1.5,len:80+Math.random()*60,life:1,decay:.018+Math.random()*.012});}
+
+function getCpts(){return[[120,70],[165,50],[215,68],[192,105],[148,118],[W-200,55],[W-155,38],[W-118,60],[W-138,96],[W-180,105],[W/2-40,130],[W/2+5,112],[W/2+42,136],[W/2+20,168],[W/2-20,162]];}
+const cedges=[[0,1],[1,2],[2,3],[3,4],[4,0],[1,3],[5,6],[6,7],[7,8],[8,9],[9,5],[6,8],[10,11],[11,12],[12,13],[13,14],[14,10],[11,13]];
+
+function draw(t){
+  ctx.clearRect(0,0,W,H);
+  ctx.fillStyle='#060914';ctx.fillRect(0,0,W,H);
+  const g=ctx.createRadialGradient(W*.3,H*.15,0,W*.3,H*.15,W*.65);
+  g.addColorStop(0,'rgba(60,20,100,.22)');g.addColorStop(1,'rgba(0,0,0,0)');
+  ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
+
+  stars.forEach(s=>{
+    const tw=.5+.5*Math.sin(t*s.ts+s.to);
+    const al=s.a*(.6+.4*tw);
+    ctx.beginPath();ctx.arc(s.x*W,s.y*H,s.r,0,Math.PI*2);
+    ctx.fillStyle=`rgba(220,210,255,${al})`;ctx.fill();
+    if(s.r>.9){ctx.beginPath();ctx.arc(s.x*W,s.y*H,s.r*2.8,0,Math.PI*2);ctx.fillStyle=`rgba(180,160,240,${al*.07})`;ctx.fill();}
+  });
+
+  const cpts=getCpts();
+  cedges.forEach(([a,b])=>{
+    const pa=cpts[a],pb=cpts[b];
+    ctx.beginPath();ctx.moveTo(pa[0],pa[1]);ctx.lineTo(pb[0],pb[1]);
+    ctx.strokeStyle=`rgba(180,150,240,${.06+.04*Math.sin(t*.0007+a)})`;ctx.lineWidth=.5;ctx.stroke();
+  });
+  cpts.forEach((p,i)=>{
+    const pulse=.5+.5*Math.sin(t*.001+i*.9);
+    ctx.beginPath();ctx.arc(p[0],p[1],1.4+pulse*.5,0,Math.PI*2);
+    ctx.fillStyle=`rgba(220,190,255,${.5+pulse*.4})`;ctx.fill();
+  });
+
+  spawnShooter(t);
+  for(let i=shooters.length-1;i>=0;i--){
+    const s=shooters[i];
+    const tx=s.x-s.vx*(s.len/s.vx),ty=s.y-s.vy*(s.len/s.vx);
+    const sg=ctx.createLinearGradient(tx,ty,s.x,s.y);
+    sg.addColorStop(0,'rgba(220,200,255,0)');sg.addColorStop(1,`rgba(240,220,255,${s.life*.9})`);
+    ctx.beginPath();ctx.moveTo(tx,ty);ctx.lineTo(s.x,s.y);ctx.strokeStyle=sg;ctx.lineWidth=1.5;ctx.stroke();
+    ctx.beginPath();ctx.arc(s.x,s.y,1.5,0,Math.PI*2);ctx.fillStyle=`rgba(255,240,255,${s.life})`;ctx.fill();
+    s.x+=s.vx;s.y+=s.vy;s.life-=s.decay;
+    if(s.life<=0||s.x>W||s.y>H)shooters.splice(i,1);
+  }
+  requestAnimationFrame(draw);
+}
+requestAnimationFrame(draw);
+
+const taglines=['navigating data like stars','finding patterns in the dark','statistics · ai · research','soft heart, sharp mind'];
+let ti=0,ci=0,deleting=false;
+const typedEl=document.getElementById('typed');
+function typeTag(){
+  const cur=taglines[ti];
+  if(!deleting){ci++;typedEl.textContent=cur.slice(0,ci);if(ci===cur.length){deleting=true;setTimeout(typeTag,2000);return;}}
+  else{ci--;typedEl.textContent=cur.slice(0,ci);if(ci===0){deleting=false;ti=(ti+1)%taglines.length;setTimeout(typeTag,400);return;}}
+  setTimeout(typeTag,deleting?38:68);
+}
+setTimeout(typeTag,800);
+
+const quotes=[
+  '\u201cGrowing gently, learning deeply \u2014 where soft intuition meets sharp logic, somewhere between data and dreams.\u201d',
+  '\u201cSoft heart, sharp mind \u2014 turning ideas into code, one commit at a time.\u201d',
+  '\u201cNavigating data like stars \u2014 finding patterns in the dark.\u201d'
+];
+let qi=0;
+const qEl=document.getElementById('quote-text');
+setInterval(()=>{
+  qEl.style.opacity='0';qEl.style.transform='translateY(6px)';
+  setTimeout(()=>{qi=(qi+1)%quotes.length;qEl.textContent=quotes[qi];qEl.style.opacity='1';qEl.style.transform='translateY(0)';},500);
+},4500);
+
+const skillData=[{n:'Python',p:88},{n:'R / Stats',p:80},{n:'ML / AI',p:75},{n:'SQL',p:72},{n:'Viz',p:65}];
+const sc=document.getElementById('skills');
+skillData.forEach((s,i)=>{
+  const row=document.createElement('div');row.className='sk-row';
+  row.innerHTML=`<span class="sk-name">${s.n}</span><div class="sk-track"><div class="sk-bar" id="sb${i}"></div></div><span class="sk-pct">${s.p}</span>`;
+  sc.appendChild(row);
+});
+
+const tlData=[
+  {date:'Now',title:'AI & Data Science',sub:'Building, shipping, researching',now:true},
+  {date:'2024',title:'Open source contributions',sub:'NLP tools & statistical libraries'},
+  {date:'2023',title:'Statistics degree',sub:'Fell in love with data'},
+  {date:'2022',title:'First ML model',sub:'Handwritten digit classifier'},
+  {date:'2021',title:'First line of code',sub:'Python. Changed everything.'},
+];
+const tlc=document.getElementById('timeline');
+tlData.forEach(e=>{
+  const item=document.createElement('div');item.className='tl-item';
+  item.innerHTML=`<div class="tl-dot${e.now?' now':''}"></div><div class="tl-date">${e.date}</div><div class="tl-title">${e.title}</div><div class="tl-sub">${e.sub}</div>`;
+  tlc.appendChild(item);
+});
+
+const projData=[
+  {name:'Stellar Sentiment',desc:'NLP pipeline classifying emotions in social media text using transformer fine-tuning.',tags:['Python','BERT','NLP'],status:'live'},
+  {name:'DataViz Dashboard',desc:'Interactive statistical dashboard for exploratory data analysis with auto-generated insights.',tags:['Python','Plotly','Stats'],status:'live'},
+  {name:'Night Forecast',desc:'Time-series weather prediction model using LSTM networks trained on 5 years of data.',tags:['Python','LSTM','ML'],status:'wip'},
+  {name:'StatQuery',desc:'Natural language interface for querying datasets — ask questions, get visualisations.',tags:['LLM','SQL','Python'],status:'wip'},
+];
+const starSVG=`<svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>`;
+const codeSVG=`<svg viewBox="0 0 24 24"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg>`;
+const pc=document.getElementById('projects');
+projData.forEach((p,i)=>{
+  const card=document.createElement('div');card.className='proj-card';
+  card.innerHTML=`<div class="proj-icon">${i%2===0?starSVG:codeSVG}</div><div class="proj-body"><div class="proj-header"><span class="proj-name">${p.name}</span><span class="status status-${p.status}">${p.status==='live'?'live':'in progress'}</span></div><div class="proj-desc">${p.desc}</div><div class="proj-tags">${p.tags.map(t=>`<span class="proj-tag">${t}</span>`).join('')}</div></div>`;
+  pc.appendChild(card);
+});
+
+const reveals=document.querySelectorAll('.reveal');
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      setTimeout(()=>{
+        entry.target.classList.add('visible');
+        if(entry.target.id==='skills'){
+          skillData.forEach((s,i)=>setTimeout(()=>{const b=document.getElementById('sb'+i);if(b)b.style.width=s.p+'%';},i*130));
+        }
+      },80);
+      observer.unobserve(entry.target);
+    }
+  });
+},{threshold:0.15});
+reveals.forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
