@@ -1,0 +1,89 @@
+<svg width="100%" viewBox="0 0 680 80" xmlns="http://www.w3.org/2000/svg">
+<title>Tanya Chaurasia — Activity Pulse</title>
+<desc>Animated EKG-style activity line showing coding consistency</desc>
+<defs>
+<style>
+@keyframes draw {
+  from { stroke-dashoffset: 1400 }
+  to   { stroke-dashoffset: 0 }
+}
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+@keyframes fadein { from{opacity:0} to{opacity:1} }
+@keyframes pulse {
+  0%,100% { r: 3; opacity: .6 }
+  50%     { r: 5; opacity: 1  }
+}
+.line {
+  stroke-dasharray: 1400;
+  stroke-dashoffset: 1400;
+  animation: draw 2.8s cubic-bezier(.4,0,.2,1) .3s forwards;
+}
+.dot  { animation: pulse 1.8s ease-in-out infinite }
+.cur  { animation: blink .8s steps(1) infinite }
+.fi   { animation: fadein .6s ease both }
+.lab  { font-family: Arial,sans-serif; font-size: 8px; fill: #4a3860; letter-spacing: 2px; text-transform: uppercase }
+.val  { font-family: Arial,sans-serif; font-size: 9px; fill: #8a78a8; letter-spacing: 1px }
+</style>
+</defs>
+
+<rect width="680" height="80" fill="#060914" rx="10"/>
+
+<!-- subtle grid lines -->
+<line x1="30" y1="20" x2="630" y2="20" stroke="rgba(180,150,220,.05)" stroke-width=".5"/>
+<line x1="30" y1="40" x2="630" y2="40" stroke="rgba(180,150,220,.07)" stroke-width=".5"/>
+<line x1="30" y1="60" x2="630" y2="60" stroke="rgba(180,150,220,.05)" stroke-width=".5"/>
+
+<!-- the pulse line -->
+<path class="line"
+  d="M30,40
+     L60,40  L65,38  L70,40
+     L90,40  L95,36  L100,40
+     L115,40 L118,28 L121,52 L124,40
+     L140,40 L144,34 L148,40
+     L165,40 L168,44 L172,40
+     L190,40 L194,32 L198,48 L202,40
+     L220,40 L224,36 L228,40
+     L248,40 L250,22 L253,58 L256,40
+     L275,40 L279,34 L283,40
+     L300,40 L304,38 L308,40
+     L328,40 L332,26 L336,54 L340,40
+     L358,40 L362,34 L366,40
+     L385,40 L388,44 L392,40
+     L410,40 L414,30 L418,50 L422,40
+     L440,40 L444,36 L448,40
+     L466,40 L469,24 L472,56 L475,40
+     L494,40 L498,34 L502,40
+     L520,40 L524,38 L528,40
+     L548,40 L552,28 L556,52 L560,40
+     L578,40 L582,36 L586,40
+     L604,40 L606,44 L610,40
+     L630,40"
+  fill="none"
+  stroke="url(#lg)"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"/>
+
+<defs>
+  <linearGradient id="lg" x1="0%" y1="0%" x2="100%" y2="0%">
+    <stop offset="0%"   stop-color="#7b50c0" stop-opacity=".3"/>
+    <stop offset="40%"  stop-color="#a070d8" stop-opacity=".8"/>
+    <stop offset="75%"  stop-color="#c8a8f0" stop-opacity="1"/>
+    <stop offset="100%" stop-color="#c8a8f0" stop-opacity=".9"/>
+  </linearGradient>
+</defs>
+
+<!-- live dot at end -->
+<circle class="dot" cx="630" cy="40" fill="#c8a8f0" style="animation-delay:.1s"/>
+<circle cx="630" cy="40" r="8" fill="none" stroke="rgba(200,168,240,.15)" stroke-width=".5" class="fi" style="animation-delay:3s"/>
+
+<!-- cursor blink after line finishes -->
+<rect class="cur" x="636" y="33" width="1.5" height="14" fill="#9060d0" rx="1" style="animation-delay:3.1s;opacity:0"/>
+
+<!-- label left -->
+<text x="30" y="75" class="lab" style="animation-delay:2.8s">tanu-1403</text>
+
+<!-- label right — streak -->
+<text x="580" y="75" class="val fi" style="animation-delay:2.8s" text-anchor="end">340+ commits</text>
+
+</svg>
